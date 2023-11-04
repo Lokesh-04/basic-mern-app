@@ -9,6 +9,7 @@ const App = () => {
   return (
     <div>
       <Router>
+
       <Link to="/" style={{margin: '10px' }} >Home</Link>
       <Link to="/input" style={{margin: '10px' }} >Input</Link>
       <Link to="/output" style={{margin: '10px' }} >Output</Link>
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/input" element={<Input/>} />
         <Route path="/output" element={<Output/>} />
       </Routes>
+      
       </Router>
     </div>
   );

@@ -1,12 +1,14 @@
 import {React, useState, useEffect} from "react";
 import axios from "axios";
 
+
 const Home = () => {
 
   const [h1Text, setH1Text] = useState("");
 
   useEffect(() => {
-    axios.get("/api").then((response) => {
+    axios.get("/api")
+    .then((response) => {
       setH1Text(response.data.h1Text);
     });
   }, []);

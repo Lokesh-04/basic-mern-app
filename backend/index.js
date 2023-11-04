@@ -7,7 +7,6 @@ const DATA = [];
 
 app.use(express.json());
 
-
 app.get("/api/", (req, res) => {
   res.json({
     h1Text: "Home page which is rendered from backend",
@@ -22,14 +21,14 @@ app.get("/api/input", (req, res) => {
 
 app.post("/api/input", (req, res) => {
   const data = req.body.data;
-  console.log(data);
 
   const cnt = DATA.length + 1;
 
   DATA.push({
-    id: cnt + 1,
+    id: cnt,
     value: data
   })
+  res.json(DATA)
 });
 
 app.get("/api/output", (req, res) => {
