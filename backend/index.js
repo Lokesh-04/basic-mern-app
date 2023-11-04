@@ -1,24 +1,41 @@
-import express from 'express'
+import express from "express";
 
-const app = express() // creates a http server
-const port = 3000
+const app = express(); // creates a http server
+const port = 3000;
 
-app.get('/',  (req, res) => {
-  res.send('Hello World')
-})
+const DATA = [];
 
-app.get('/input', (req, res)=>{
-    res.send('input for input')
-})
+app.use(express.json());
 
-app.post('/input', (req, res) =>{
-    console.log(req.body);
-})
 
-app.get('/output', (req, res)=>{
-    res.send('output')
-})
+app.get("/api/", (req, res) => {
+  res.json({
+    h1Text: "Home page which is rendered from backend",
+  });
+});
 
-app.listen(port, () =>{
-    console.log(`Server is running on ${port}`)
-})
+app.get("/api/input", (req, res) => {
+  res.json({
+    h1Text: "Input page which is rendered from backend",
+  });
+});
+
+app.post("/api/input", (req, res) => {
+  const data = req.body.data;
+  console.log(data);
+
+  const cnt = DATA.length + 1;
+
+  DATA.push({
+    id: cnt + 1,
+    value: data
+  })
+});
+
+app.get("/api/output", (req, res) => {
+  res.json(DATA)
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on ${port}`);
+});

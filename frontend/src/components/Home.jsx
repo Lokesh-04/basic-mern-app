@@ -1,11 +1,21 @@
-import React from "react";
-import {BrowserRouter as Router,Route,Routes,BrowserRouter,Link} from "react-router-dom";
-import Input from "./Input";
-import Output from "./Output";
+import {React, useState, useEffect} from "react";
+import axios from "axios";
+
 const Home = () => {
+
+  const [h1Text, setH1Text] = useState("");
+
+  useEffect(() => {
+    axios.get("/api").then((response) => {
+      setH1Text(response.data.h1Text);
+    });
+  }, []);
+
   return (
     <div>
-      <h1>Home Page</h1>
+      <h1>{h1Text}</h1>
+      <a href="/input"><button>input</button></a>
+      <a href="/output"><button>output</button></a>
     </div>
   )
 }

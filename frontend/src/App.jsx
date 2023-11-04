@@ -4,15 +4,17 @@ import Home from "./components/Home";
 import Input from "./components/Input";
 import Output from "./components/Output";
 
-const App = () => {
+const App = () => {  
+
   return (
     <div>
       <Router>
-      <Link to="/" style={{margin: '10px' }}>Home</Link>
-      <Link to="/input" style={{margin: '10px' }}>Input</Link>
-      <Link to="/output" style={{margin: '10px' }}>Output</Link>
+      <Link to="/" style={{margin: '10px' }} >Home</Link>
+      <Link to="/input" style={{margin: '10px' }} >Input</Link>
+      <Link to="/output" style={{margin: '10px' }} >Output</Link>
+
       <Routes>
-        <Route path="/" element={<Home />}> </Route>
+        <Route path="/" element={<Home />} />
         <Route path="/input" element={<Input/>} />
         <Route path="/output" element={<Output/>} />
       </Routes>
