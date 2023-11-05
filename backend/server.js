@@ -9,17 +9,11 @@ mongoose.connect('mongodb+srv://kancharapulokeshkumar:nVCiHmGB8rXjbgEJ@cluster1.
 // mongodb://localhost:27017/mern
 app.use(express.json());
 
-app.get("/", (req, res)=>{
+app.get("/api", (req, res)=>{
   res.json({
     h1Text: "Home page which is rendered from backend",
   });
-})
-
-// app.get("/api/", (req, res) => {
-//   res.json({
-//     h1Text: "Home page which is rendered from backend",
-//   });
-// });
+});
 
 app.get("/api/input", (req, res) => {
   res.json({
@@ -37,7 +31,7 @@ app.post("/api/input", async(req, res) => {
   await data.save();
 });
 
-app.get("/api/output/", async(req, res) => {
+app.get("/api/output", async(req, res) => {
   const data = await Data.find({});
   res.json(data)
 });

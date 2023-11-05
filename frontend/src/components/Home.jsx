@@ -1,7 +1,6 @@
 import {React, useState, useEffect} from "react";
 import axios from "axios";
 
-
 const Home = () => {
 
   const [h1Text, setH1Text] = useState("");
