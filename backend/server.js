@@ -9,6 +9,10 @@ mongoose.connect('mongodb+srv://kancharapulokeshkumar:nVCiHmGB8rXjbgEJ@cluster1.
 // mongodb://localhost:27017/mern
 app.use(express.json());
 
+app.get("/", (req, res)=>{
+  res.send("server");
+})
+
 app.get("/api/", (req, res) => {
   res.json({
     h1Text: "Home page which is rendered from backend",
