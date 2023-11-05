@@ -5,7 +5,7 @@ import Data from "./models/Data.js"; //importing model
 const app = express(); // creates a http server
 const port = 3000;
 
-mongoose.connect('mongodb://127.0.0.1:27017/mern'); // mongoDB connection string
+mongoose.connect('mongodb+srv://kancharapulokeshkumar:nVCiHmGB8rXjbgEJ@cluster1.n0lqznp.mongodb.net/mern?retryWrites=true&w=majority'); // mongoDB connection string
 
 app.use(express.json());
 
