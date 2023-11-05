@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   server: {
     proxy: {
-      '/api': 'http://localhost:3000', //backend url needs to be changed during deployment...
+      '/api': 'https://basic-mern-app-backend.vercel.app', //backend url needs to be changed during deployment...
     },
   },
   plugins: [react()],
