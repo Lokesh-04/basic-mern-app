@@ -17,7 +17,7 @@ export default function Output() {
 
       <ul>
         {data.map((signleValue) => (
-          <li key={signleValue.id}>{signleValue.value}</li>
+          <li key={signleValue.id}>{signleValue.data}</li>
         ))}
       </ul>
 

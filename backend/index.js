@@ -1,9 +1,11 @@
 import express from "express";
+import mongoose from "mongoose";
+import Data from "./models/Data.js"; //importing model
 
 const app = express(); // creates a http server
 const port = 3000;
 
-const DATA = [];
+mongoose.connect('mongodb://127.0.0.1:27017/mern'); // mongoDB connection string
 
 app.use(express.json());
 
@@ -19,20 +21,19 @@ app.get("/api/input", (req, res) => {
   });
 });
 
-app.post("/api/input", (req, res) => {
-  const data = req.body.data;
-
-  const cnt = DATA.length + 1;
-
-  DATA.push({
-    id: cnt,
-    value: data
-  })
-  res.json(DATA)
+app.post("/api/input", async(req, res) => {
+  const count = await Data.countDocuments({}) + 1;
+  const data = new Data({
+    id: count,
+    data: req.body.data,
+  });
+  
+  await data.save();
 });
 
-app.get("/api/output", (req, res) => {
-  res.json(DATA)
+app.get("/api/output", async(req, res) => {
+  const data = await Data.find({});
+  res.json(data)
 });
 
 app.listen(port, () => {
