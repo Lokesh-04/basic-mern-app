@@ -10,14 +10,16 @@ mongoose.connect('mongodb+srv://kancharapulokeshkumar:nVCiHmGB8rXjbgEJ@cluster1.
 app.use(express.json());
 
 app.get("/", (req, res)=>{
-  res.send("server");
-})
-
-app.get("/api/", (req, res) => {
   res.json({
     h1Text: "Home page which is rendered from backend",
   });
-});
+})
+
+// app.get("/api/", (req, res) => {
+//   res.json({
+//     h1Text: "Home page which is rendered from backend",
+//   });
+// });
 
 app.get("/api/input", (req, res) => {
   res.json({
