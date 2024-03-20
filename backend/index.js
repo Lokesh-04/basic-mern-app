@@ -1,6 +1,6 @@
 import express from "express";
 import mongoose from "mongoose";
-import Data from "./models/Data"; //importing model
+import Data from "./models/dataModel.js"; //importing model
 import cors from "cors";
 
 const app = express(); // creates a http server
