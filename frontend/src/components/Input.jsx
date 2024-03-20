@@ -1,7 +1,7 @@
-import {React, useState} from "react";
+import { React, useState } from "react";
 import axios from "axios";
 
-const backendUrl = "/api/input";
+const backendUrl = "http://localhost:3000/input";
 
 const Input = () => {
   const [formData, setFormData] = useState({
@@ -14,7 +14,9 @@ const Input = () => {
 
   const handleSubmit = async () => {
     // Send the form data to the backend
-    await axios.post(backendUrl, formData)
+    console.log(formData);
+    await axios
+      .post(backendUrl, formData)
       .then((response) => {
         // Handle the successful response
         console.log(response);
@@ -23,7 +25,7 @@ const Input = () => {
         // Handle the failed response
         console.log(err);
       });
-  }; 
+  };
 
   return (
     <div>

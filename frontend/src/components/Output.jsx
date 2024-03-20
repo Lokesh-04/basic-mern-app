@@ -5,7 +5,7 @@ export default function Output() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get("/api/output")
+    axios.get("http://localhost:3000/output")
     .then((response) => {
       setData(response.data);
     });
