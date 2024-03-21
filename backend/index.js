@@ -10,7 +10,7 @@ mongoose.connect('mongodb+srv://kancharapulokeshkumar:TiXyBcf2E5Sl3Wx9@cluster0.
 // mongodb://localhost:27017/mern
 app.use(cors(
   {
-    origin : "https://basic-mern-app-frontend.vercel.app",
+    origin : "https://test-app-frontend-delta.vercel.app",
     methods : ["GET","POST","PUT","DELETE"],
     credentials : true
   }));
