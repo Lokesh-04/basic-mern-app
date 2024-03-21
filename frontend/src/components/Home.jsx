@@ -5,7 +5,7 @@ const Home = () => {
   const [h1Text, setH1Text] = useState("");
 
   useEffect(() => {
-    axios.get("https://basic-mern-app-0yaj.onrender.com/").then((response) => {
+    axios.get("https://test-backend-fyc6.onrender.com/").then((response) => {
       setH1Text(response.data.h1Text);
       console.log(h1Text);
     });
