@@ -8,7 +8,12 @@ const port = 3000;
 
 mongoose.connect('mongodb+srv://kancharapulokeshkumar:TiXyBcf2E5Sl3Wx9@cluster0.gejtkqv.mongodb.net/mern'); // mongoDB connection string
 // mongodb://localhost:27017/mern
-app.use(cors());
+app.use(cors(
+  {
+    origin : "https://basic-mern-app-frontend.vercel.app",
+    methods : ["GET","POST","PUT","DELETE"],
+    credentials : true
+  }));
 app.use(express.json());
 
 app.get("/", (req, res)=>{
