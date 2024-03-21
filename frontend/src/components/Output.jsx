@@ -5,7 +5,7 @@ export default function Output() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/output")
+    axios.get("https://basic-mern-app-0yaj.onrender.com/")
     .then((response) => {
       setData(response.data);
     });
