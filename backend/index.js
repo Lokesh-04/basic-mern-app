@@ -12,8 +12,8 @@ app.use(cors(
   {
     origin : "https://test-app-frontend-delta.vercel.app",
     methods : ["GET","POST","PUT","DELETE"],
-    credentials : true
-  }));
+    credentials : true
+  }));
 app.use(express.json());
 
 app.get("/", (req, res)=>{
