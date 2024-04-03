@@ -37,10 +37,16 @@ app.post("/input", async(req, res) => {
   await data.save();
 });
 
-app.get("/output", async(req, res) => {
-  const data = await Data.find({});
-  res.json(data)
-});
+app.get("/output", async (req, res) => {
+  try {
+     const data = await Data.find({});
+     res.json(data);
+  } catch (error) {
+     console.error("Error fetching data:", error);
+     res.status(500).json({ error: "An error occurred while fetching data." });
+  }
+ });
+ 
 
 app.listen(port, () => {
   console.log(`Server is running on ${port}`);
