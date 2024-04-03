@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import Data from "./models/dataModel.js"; //importing model
 import cors from "cors";
+import dotenv from "dotenv";
 
 const app = express(); // creates a http server
 const port = 3000;
@@ -14,6 +15,7 @@ app.use(cors(
   //   credentials : true}
     ));
 app.use(express.json());
+app.use(dotenv());
 
 app.get("/", (req, res)=>{
   res.json({
