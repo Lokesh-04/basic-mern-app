@@ -5,7 +5,7 @@ export default function Output() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get("https://test-backend-fyc6.onrender.com/output")
+    axios.get("http://localhost:3000/output")
     .then((response) => {
       setData(response.data);
     });

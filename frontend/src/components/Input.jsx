@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import axios from "axios";
 
-const backendUrl = "https://test-backend-fyc6.onrender.com/input";
+const backendUrl = "http://localhost:3000/input";
 
 const Input = () => {
   const [formData, setFormData] = useState({
