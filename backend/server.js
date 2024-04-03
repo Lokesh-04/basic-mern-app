@@ -6,7 +6,7 @@ import cors from "cors";
 const app = express(); // creates a http server
 const port = 3000;
 
-mongoose.connect('mongodb+srv://kancharapulokeshkumar:BHi4pErdjBmditgK@cluster0.i3wfd7f.mongodb.net/mern'); // mongoDB connection string
+mongoose.connect(process.env.MONGO_URI); // mongoDB connection string
 // mongodb://localhost:27017/mern
 app.use(cors(
   // {origin : "https://test-app-frontend-delta.vercel.app",
