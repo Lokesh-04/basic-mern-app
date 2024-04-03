@@ -9,11 +9,10 @@ const port = 3000;
 mongoose.connect('mongodb+srv://kancharapulokeshkumar:BHi4pErdjBmditgK@cluster0.i3wfd7f.mongodb.net/mern'); // mongoDB connection string
 // mongodb://localhost:27017/mern
 app.use(cors(
-  {
-    origin : "https://test-app-frontend-delta.vercel.app",
-    methods : ["GET","POST","PUT","DELETE"],
-    credentials : true
-  }));
+  // {origin : "https://test-app-frontend-delta.vercel.app",
+  //   methods : ["GET","POST","PUT","DELETE"],
+  //   credentials : true}
+    ));
 app.use(express.json());
 
 app.get("/", (req, res)=>{
