@@ -6,9 +6,15 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express(); // creates a http server
-const port = 3000;
 
-mongoose.connect(process.env.MONGO_URI); // mongoDB connection string
+const PORT = process.env.PORT || 6001;
+mongoose
+  .connect(process.env.MONGO_URL)
+  .then(() => {
+    app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
+  })
+  .catch((error) => console.log(`${error} did not connect`));
+
 // mongodb://localhost:27017/mern
 app.use(
   cors()
@@ -48,8 +54,4 @@ app.get("/output", async (req, res) => {
     console.error("Error fetching data:", error);
     res.status(500).json({ error: "An error occurred while fetching data." });
   }
-});
-
-app.listen(port, () => {
-  console.log(`Server is running on ${port}`);
 });
